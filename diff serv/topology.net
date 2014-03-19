@@ -1,0 +1,33 @@
+autostart = False
+version = 0.8.3.1
+[127.0.0.1:7200]
+    workingdir = C:\Users\kt\AppData\Local\Temp
+    udp = 10000
+    [[2691]]
+        image = C:\Users\kt\Downloads\c2691-adventerprisek9_sna-mz.124-13b.image
+        idlepc = 0x60b70724
+        sparsemem = True
+    [[ROUTER R4]]
+        model = 2691
+        console = 2005
+        aux = 2505
+        cnfg = configs\R4.cfg
+        f0/0 = nio_gen_eth:\device\npf_{cd32b951-acc4-4916-b2ab-d0b7d9625e2e}
+        f0/1 = nio_gen_eth:\device\npf_{cd32b951-acc4-4916-b2ab-d0b7d9625e2e}
+        x = -273.0
+        y = -79.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    [[Cloud C2]]
+        x = -85.5
+        y = -62.0
+        z = 1.0
+        connections = R4:f0/1:nio_gen_eth:\device\npf_{cd32b951-acc4-4916-b2ab-d0b7d9625e2e}
+    [[Cloud C1]]
+        x = -527.5
+        y = -28.0
+        hx = 64.5
+        hy = -21.0
+        z = 1.0
+        connections = R4:f0/0:nio_gen_eth:\device\npf_{cd32b951-acc4-4916-b2ab-d0b7d9625e2e}
